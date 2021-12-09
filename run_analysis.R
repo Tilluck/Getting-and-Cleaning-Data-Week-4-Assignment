@@ -52,3 +52,4 @@ colnames(x_final) <- x_finalcols
 # list the average of each variable for each activity and each subject.
 x_means <- x_final %>% group_by(activity, subject) %>% summarise(across(everything(), mean))
 write.csv(x_means, "./UCI HAR Dataset/tidydata.csv", row.names = FALSE) 
+write.table(x_means, file = "./UCI HAR Dataset/tidydata.txt", row.names = FALSE, col.names = TRUE) 
